@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
+    <id>WITF UI</id>
     <version>$version$</version>
-    <title>$title$</title>
+    <title>Web UI for WITF</title>
     <authors>WITF Team</authors>
     <owners>WITF Team</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
