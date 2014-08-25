@@ -12,6 +12,6 @@
 
   </metadata>
   <files>
-    <file src="app\**\*" target="Content" />
+    <file src="app\**\*"/>
   </files>
 </package>
