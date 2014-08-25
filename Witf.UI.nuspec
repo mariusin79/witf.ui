@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>WITF UI</id>
+    <id>Witf.UI</id>
     <version>$version$</version>
     <title>Web UI for WITF</title>
     <authors>WITF Team</authors>
