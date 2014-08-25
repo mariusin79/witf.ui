@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>WITF Team</authors>
+    <owners>WITF Team</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>WITF UI</description>
+    <copyright>Copyright 2014</copyright>
+    
+  </metadata>
+  <files>
+    <file src="index.html" target="" />
+  </files>
+</package>
