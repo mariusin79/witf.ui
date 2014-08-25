@@ -7,6 +7,20 @@ var gulp = require('gulp'),
   http = require('http'),
   livereload = require('gulp-livereload');
 
+gulp.task('browserify', function (){
+  var bundler = browserify('./app/src/index.js', {
+    cache: {},
+    packageCache: {},
+    fullPaths: true,
+    debug: false
+  });
+
+  bundler.bundle()
+    .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+    .pipe(source('bundle.js'))
+    .pipe(gulp.dest('./app'));
+});
+
 gulp.task('connect-livereload', function(next) {
     var app = connect()
         .use(require('connect-livereload')({ port: 35729 }))
