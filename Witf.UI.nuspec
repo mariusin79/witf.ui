@@ -9,9 +9,9 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>WITF UI</description>
     <copyright>Copyright 2014</copyright>
-    
+
   </metadata>
   <files>
-    <file src="index.html" target="" />
+    <file src="app/**/*" target="" />
   </files>
 </package>
