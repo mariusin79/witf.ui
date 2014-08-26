@@ -6,4 +6,4 @@ witf.ui
 - installer gulp globalt: npm install -g gulp
 - skriv gulp
 
-koden skal nå kjøre, med autocomplete
+koden skal nå kjøre, med autoreload
