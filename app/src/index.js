@@ -1,5 +1,4 @@
-//ugly, fix
-document.write('<div ng-app="pingPongApp" ui-view></div>');
+
 
 angular.module('pingPongApp', ['ui.router'])
   .config(function ($stateProvider, $urlRouterProvider) {
