@@ -1,37 +1,30 @@
-
-
 angular.module('pingPongApp', ['ui.router'])
   .config(function ($stateProvider, $urlRouterProvider) {
     // For any unmatched url, redirect to /state1
-    $urlRouterProvider.otherwise("/");
+    $urlRouterProvider.otherwise('/');
     //
     // Now set up the states
     $stateProvider
       .state('main', {
-        url: "/",
-        templateUrl: "partials/main.html"
+        url: '/',
+        templateUrl: 'partials/main.html',
+				controller: 'MainCtrl'
       })
       .state('board', {
         abstract: true,
-        templateUrl: "partials/board.html"
+        templateUrl: 'partials/board.html'
       })
       .state('board.detail', {
-        url: "/board/:boardid",
+        url: '/board/:boardid',
         views: {
           detail: {
-            templateUrl: "partials/board.detail.html",
-            controller: function ($scope) {
-              $scope.ingredients = ["A", "List", "Of", "Ingredients"];
-            }
+            templateUrl: 'partials/board.detail.html',
+						controller: 'BoardCtrl'
           },
           search: {
-            templateUrl: "partials/board.search.html",
-            controller: function ($scope) {
-              console.log('woo');
-              $scope.recipes = ["A", "List", "Of", "Recipes"];
-            }
+            templateUrl: 'partials/board.search.html',
+						controller: 'SearchCtrl'
           }
         }
       })
   });
-console.log('wooo');

@@ -1,5 +1,7 @@
 <div>
-	<input type="text" placeholder="Ingredienser her.."/>
+	<form ng-submit="addIngredient()">
+		<input type="text" placeholder="Ingredienser her.." ng-model="ingredient"/>
+	</form>
 	<ul>
 		<li ng-repeat="ingredient in ingredients">
 			{{ingredient}}
