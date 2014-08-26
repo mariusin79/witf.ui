@@ -1,6 +1,6 @@
 witf.ui
 =======
-- installer node
+- installer node og npm
 - i katalogen, kjør: npm install
 - installer gulp globalt: npm install -g gulp
 - skriv gulp
