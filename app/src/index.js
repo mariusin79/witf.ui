@@ -1,6 +1,3 @@
-require('angular/angular');
-require('ui-router');
-
 //ugly, fix
 document.write('<div ng-app="pingPongApp" ui-view></div>');
 
