@@ -1,3 +1,15 @@
-<h1>Hei, skal vi finne en oppskrift?</h1>
-<a ui-sref="board.detail({boardid:boardId})">Start!</a>
+<div class="jumbotron">
+	<div class="container">
+		<h1>Ping-pong</h1>
 
+		<p>Some catchy text should go here</p>
+
+		<p>
+			<input class="form-control" type="text" ng-model="boardId"/>
+		</p>
+
+		<p>
+			<a class="btn btn-primary btn-lg btn-block" ui-sref="board.detail({boardid:boardId})">Start!</a>
+		</p>
+	</div>
+</div>

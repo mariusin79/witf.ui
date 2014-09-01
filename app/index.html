@@ -1,30 +1,80 @@
 <!DOCTYPE html>
+<html lang="no">
 <head>
-	<meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
-	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://bootflat.github.io/bootflat/css/bootflat.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<style>
+		html, body {
+			height: 100%;
+		}
+
+		#content {
+			height: 100%;
+			overflow: hidden;
+		}
+		#bgimg {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			background: url('/img/bg.jpg') no-repeat center center fixed;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			opacity: 0.4;
+			z-index:-99;
+		}
+
+		.jumbotron {
+			color: white;
+			height: 100%;
+			background-color: transparent;
+			z-index:99;
+		}
+		.container {
+			height: 100%;
+		}
+
+		.ingredient {
+			display:inline-block;
+			margin: 2px;
+			font-size: 16px;
+		}
+		.ingredient .close {
+			margin-left: 4px;
+			font-size: 16px;
+		}
+		.detail {
+			-webkit-transition: margin-top 0.5s ease-in-out;
+			-moz-transition: margin-top 0.5s ease-in-out;
+			-o-transition: margin-top 0.5s ease-in-out;
+			transition: margin-top 0.5s ease-in-out;
+		}
+
+	</style>
 </head>
 
 <body>
-<div ng-app="pingPongApp" ui-view></div>
+<div id="content">
+	<div id="bgimg"></div>
+	<div class="container" ng-app="pingPongApp" ui-view></div>
+</div>
+
 <!-- Angular -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
 
 <!-- Bootstrap -->
-<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="https://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
-<!-- Bootflat's JS files.-->
-<script src="https://bootflat.github.io/bootflat/js/icheck.min.js"></script>
-<script src="https://bootflat.github.io/bootflat/js/jquery.fs.selecter.min.js"></script>
-<script src="https://bootflat.github.io/bootflat/js/jquery.fs.stepper.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 <!-- Source -->
 <script src="src/index.js"></script>
 <script src="src/BoardCtrl.js"></script>
 <script src="src/SearchCtrl.js"></script>
 <script src="src/MainCtrl.js"></script>
-
 </body>
 </html>

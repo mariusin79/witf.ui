@@ -1,13 +1,24 @@
-<div>
+<div class="row">
 	<form ng-submit="addIngredient()">
-		<input type="text" placeholder="Ingredienser her.." ng-model="ingredient"/>
+		<input class="form-control"
+			   type="text"
+			   placeholder="Ingredienser her.."
+			   ng-model="ingredient"/>
 	</form>
-	<ul>
-		<li ng-repeat="ingredient in ingredients">
-			{{ingredient}}
-		</li>
-	</ul>
-	<button>Søk</button>
+	<p>
 
+	<div class="well">
+		<div class="ingredient label label-default" ng-repeat="ingredient in ingredients">
+			<span>{{ingredient.name}} </span>
+			<button type="button" class="close" ng-click="removeIngredient(ingredient)">
+				<span>×</span>
+			</button>
+		</div>
+	</div>
+	</p>
+</div>
+<div class="row">
+	<a class="btn btn-default btn-block">Del med noen andre</a>
+	<a class="btn btn-primary btn-lg btn-block" ng-click="collapse()">Søk etter oppskrifter</a>
 </div>
 
