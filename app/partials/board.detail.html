@@ -1,13 +1,14 @@
 <div class="row">
-	<form ng-submit="addIngredient()">
-		<input class="form-control"
-			   type="text"
-			   placeholder="Ingredienser her.."
-			   ng-model="ingredient"/>
+	<form>
+		<pp-typeahead
+				placeholder="Ingredienser her"
+				on-select="addIngredient(ingredient)"></pp-typeahead>
 	</form>
 	<p>
-
 	<div class="well">
+		<div ng-hide="ingredients.length" class="ingredient">
+			<span>Skriv inn ingredienser i boksen over</span>
+		</div>
 		<div class="ingredient label label-default" ng-repeat="ingredient in ingredients">
 			<span>{{ingredient.name}} </span>
 			<button type="button" class="close" ng-click="removeIngredient(ingredient)">
