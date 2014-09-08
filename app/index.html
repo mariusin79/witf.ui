@@ -54,6 +54,21 @@
 			transition: margin-top 0.5s ease-in-out;
 		}
 
+		.recipeWrapper {
+			height:90%;
+			overflow-y:auto;
+			-webkit-overflow-scrolling: touch;
+		}
+		.recipeWrapper ul {
+			padding: 0;
+		}
+
+		.recipe {
+			height: 400px;
+			margin:0;
+		}
+
+
 	</style>
 </head>
 
@@ -75,6 +90,6 @@
 <script src="src/SearchCtrl.js"></script>
 <script src="src/MainCtrl.js"></script>
 <script src="src/typeahead-directive.js"></script>
-<script src="src/Ingredients.js"></script>
+<script src="src/Api.js"></script>
 </body>
 </html>

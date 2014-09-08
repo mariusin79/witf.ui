@@ -1,11 +1,9 @@
 angular.module('pingPongApp')
-	.controller('BoardCtrl', function ($scope, Ingredients) {
+	.controller('BoardCtrl', function ($scope, boardState, Api) {
+		$scope.ingredients = boardState.ingredients;
 		$scope.addIngredient = function (ingredient) {
 			$scope.ingredients.push({name: ingredient});
 		}
-
-		$scope.ingredients = [
-		];
 
 		$scope.removeIngredient = function (ingredient) {
 			var idx = $scope.ingredients.indexOf(ingredient);
@@ -16,5 +14,10 @@ angular.module('pingPongApp')
 		$scope.collapse = function () {
 			var detailDiv = $('.detail');
 			detailDiv.css({'margin-top': 0 - detailDiv.height()});
+			boardState.recipes.length = 0;
+			Api.searchRecipes(_.pluck($scope.ingredients, 'name'))
+				.then(function(data){
+					_.merge(boardState.recipes, data);
+				})
 		}
 	});

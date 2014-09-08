@@ -1,6 +1,6 @@
 angular.module('pingPongApp')
-	.controller('SearchCtrl', function ($scope) {
-		$scope.recipes = ["A", "List", "Of", "Recipes"];
+	.controller('SearchCtrl', function ($scope, boardState) {
+		$scope.recipes = boardState.recipes;
 
 		$scope.expand = function (){
 			var detailDiv = $('.detail');

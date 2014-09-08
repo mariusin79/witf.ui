@@ -1,5 +1,5 @@
 angular.module('pingPongApp')
-	.directive('ppTypeahead', function (Ingredients) {
+	.directive('ppTypeahead', function (Api) {
 		return {
 			restrict: 'E',
 			replace: true,
@@ -9,7 +9,7 @@ angular.module('pingPongApp')
 			},
 			link: function (scope, element, attrs, controller) {
 				function search(q, cb) {
-					Ingredients.search(q)
+					Api.searchIngredients(q)
 						.then(function (data) {
 							cb(data);
 						})
