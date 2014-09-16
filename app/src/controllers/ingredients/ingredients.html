@@ -6,10 +6,10 @@
 	</form>
 	<p>
 	<div class="well">
-		<div ng-hide="ingredients.length" class="ingredient">
+		<div ng-hide="boardState.ingredients.length" class="ingredient">
 			<span>Skriv inn ingredienser i boksen over</span>
 		</div>
-		<div class="ingredient label label-default" ng-repeat="ingredient in ingredients">
+		<div class="ingredient label label-default" ng-repeat="ingredient in boardState.ingredients">
 			<span>{{ingredient.name}} </span>
 			<button type="button" class="close" ng-click="removeIngredient(ingredient)">
 				<span>×</span>

@@ -1,20 +1,21 @@
 angular.module('pingPongApp')
 	.controller('IngredientCtrl', function ($scope, boardState, Api) {
-		$scope.ingredients = boardState.ingredients;
+		$scope.boardState = boardState;
+
 		$scope.addIngredient = function (ingredient) {
-			$scope.ingredients.push({name: ingredient});
+			boardState.ingredients.push({name: ingredient});
 		}
 
 		$scope.removeIngredient = function (ingredient) {
-			var idx = $scope.ingredients.indexOf(ingredient);
-			$scope.ingredients.splice(idx, 1);
+			var idx = boardState.ingredients.indexOf(ingredient);
+			boardState.ingredients.splice(idx, 1);
 		}
 
 		$scope.search = function (){
-			boardState.recipes.length = 0;
+			boardState.recipes = null;
 			Api.searchRecipes(_.pluck(boardState.ingredients, 'name'))
 				.then(function(data){
-					_.merge(boardState.recipes, data);
+					boardState.recipes = data;
 				});
 		};
 	});

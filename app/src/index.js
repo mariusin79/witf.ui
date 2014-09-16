@@ -13,17 +13,27 @@ angular.module('pingPongApp', ['ui.router'])
 			})
 			.state('board', {
 				abstract: true,
-				templateUrl: 'partials/board.html'
-			})
-			.state('board.ingredients', {
-				url: '/board/:boardid',
+				templateUrl: 'partials/board.html',
 				resolve: {
 					boardState: function () {
-						return {ingredients: [
-							{name: 'ost'}
-						], recipes: []};
+						var ingredients = [{name: 'ost'}];
+						return {
+							ingredients: ingredients,
+							recipes: null,
+							getSelectedRecipes: function () {
+								if(!this.recipes){
+									return [];
+								}
+								return this.recipes.filter(function (recipe) {
+									return recipe.selected;
+								});
+							}
+						};
 					}
-				},
+				}
+			})
+			.state('board.detail', {
+				url: '/board/:boardid',
 				views: {
 					detail: {
 						templateUrl: 'src/controllers/ingredients/ingredients.html',
