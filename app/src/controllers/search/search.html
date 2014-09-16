@@ -1,16 +1,14 @@
-<div class="row">
-	<a class="btn btn-primary btn-lg btn-block" ng-click="expand()">Tilbake</a>
-</div>
 <div class="row recipeWrapper">
 	<ul>
 		<li ng-repeat="recipe in recipes" class="thumbnail recipe col-xs-6">
-			<img ng-src="{{recipe.imageUrl}}"/>
-
+			<!--<img ng-src="{{recipe.imageUrl}}"/>-->
 			<div class="caption">
-				<h3>{{recipe.recipeName}}</h3>
-
+				<p>{{recipe.recipeName}}</p>
 				<p><a href="{{recipe.urlToRecipeAtSource}}" target="_blank" class="btn btn-block btn-primary" role="button">Vis</a></p>
 			</div>
 		</li>
 	</ul>
+</div>
+<div class="row">
+	<a class="btn btn-primary btn-lg btn-block" ng-click="expand()">Tilbake</a>
 </div>

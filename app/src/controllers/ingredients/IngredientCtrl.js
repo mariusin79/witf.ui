@@ -1,5 +1,5 @@
 angular.module('pingPongApp')
-	.controller('BoardCtrl', function ($scope, boardState, Api) {
+	.controller('IngredientCtrl', function ($scope, boardState, Api) {
 		$scope.ingredients = boardState.ingredients;
 		$scope.addIngredient = function (ingredient) {
 			$scope.ingredients.push({name: ingredient});
@@ -10,14 +10,11 @@ angular.module('pingPongApp')
 			$scope.ingredients.splice(idx, 1);
 		}
 
-		// hack, move into directive
-		$scope.collapse = function () {
-			var detailDiv = $('.detail');
-			detailDiv.css({'margin-top': 0 - detailDiv.height()});
+		$scope.search = function (){
 			boardState.recipes.length = 0;
-			Api.searchRecipes(_.pluck($scope.ingredients, 'name'))
+			Api.searchRecipes(_.pluck(boardState.ingredients, 'name'))
 				.then(function(data){
 					_.merge(boardState.recipes, data);
-				})
-		}
+				});
+		};
 	});

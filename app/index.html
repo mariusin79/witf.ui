@@ -13,7 +13,6 @@
 
 		#content {
 			height: 100%;
-			overflow: hidden;
 		}
 		#bgimg {
 			position: absolute;
@@ -34,40 +33,6 @@
 			background-color: transparent;
 			z-index:99;
 		}
-		.container {
-			height: 100%;
-		}
-
-		.ingredient {
-			display:inline-block;
-			margin: 2px;
-			font-size: 16px;
-		}
-		.ingredient .close {
-			margin-left: 4px;
-			font-size: 16px;
-		}
-		.detail {
-			-webkit-transition: margin-top 0.5s ease-in-out;
-			-moz-transition: margin-top 0.5s ease-in-out;
-			-o-transition: margin-top 0.5s ease-in-out;
-			transition: margin-top 0.5s ease-in-out;
-		}
-
-		.recipeWrapper {
-			height:90%;
-			overflow-y:auto;
-			-webkit-overflow-scrolling: touch;
-		}
-		.recipeWrapper ul {
-			padding: 0;
-		}
-
-		.recipe {
-			height: 400px;
-			margin:0;
-		}
-
 
 	</style>
 </head>
@@ -78,7 +43,7 @@
 	<div class="container" ng-app="pingPongApp" ui-view></div>
 </div>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -86,10 +51,10 @@
 <script src="lib/bootstrap3-typeahead.min.js"></script>
 <!-- Source -->
 <script src="src/index.js"></script>
-<script src="src/BoardCtrl.js"></script>
-<script src="src/SearchCtrl.js"></script>
-<script src="src/MainCtrl.js"></script>
-<script src="src/typeahead-directive.js"></script>
-<script src="src/Api.js"></script>
+<script src="src/controllers/ingredients/IngredientCtrl.js"></script>
+<script src="src/controllers/search/SearchCtrl.js"></script>
+<script src="src/controllers/frontpage/FrontpageCtrl.js"></script>
+<script src="src/directives/typeahead-directive.js"></script>
+<script src="src/services/Api.js"></script>
 </body>
 </html>
