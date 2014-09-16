@@ -1,5 +1,19 @@
 angular.module('pingPongApp', ['ui.router'])
 	.constant('apiUrl', 'http://api.m0f0.net/api')
+	.value('boardState', {
+		ingredients: [
+			{name: 'ost'}
+		],
+		recipes: null,
+		getSelectedRecipes: function () {
+			if (!this.recipes) {
+				return [];
+			}
+			return this.recipes.filter(function (recipe) {
+				return recipe.selected;
+			});
+		}
+	})
 	.config(function ($stateProvider, $urlRouterProvider) {
 		// For any unmatched url, redirect to /state1
 		$urlRouterProvider.otherwise('/');
@@ -14,32 +28,22 @@ angular.module('pingPongApp', ['ui.router'])
 			.state('board', {
 				abstract: true,
 				templateUrl: 'partials/board.html',
-				resolve: {
-					boardState: function () {
-						var ingredients = [{name: 'ost'}];
-						return {
-							ingredients: ingredients,
-							recipes: null,
-							getSelectedRecipes: function () {
-								if(!this.recipes){
-									return [];
-								}
-								return this.recipes.filter(function (recipe) {
-									return recipe.selected;
-								});
-							}
-						};
+
+			})
+			.state('ingredients', {
+				parent: 'board',
+				url: '/:boardid',
+				views: {
+					'ingredients': {
+						templateUrl: 'src/controllers/ingredients/ingredients.html',
+						controller: 'IngredientCtrl'
 					}
 				}
 			})
-			.state('board.detail', {
-				url: '/board/:boardid',
+			.state('search', {
+				parent: 'ingredients',
 				views: {
-					detail: {
-						templateUrl: 'src/controllers/ingredients/ingredients.html',
-						controller: 'IngredientCtrl'
-					},
-					search: {
+					'search@board': {
 						templateUrl: 'src/controllers/search/search.html',
 						controller: 'SearchCtrl'
 					}

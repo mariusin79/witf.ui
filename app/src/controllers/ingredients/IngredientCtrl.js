@@ -1,5 +1,5 @@
 angular.module('pingPongApp')
-	.controller('IngredientCtrl', function ($scope, boardState, Api) {
+	.controller('IngredientCtrl', function ($scope, $state, boardState, Api) {
 		$scope.boardState = boardState;
 
 		$scope.addIngredient = function (ingredient) {
@@ -12,10 +12,6 @@ angular.module('pingPongApp')
 		}
 
 		$scope.search = function (){
-			boardState.recipes = null;
-			Api.searchRecipes(_.pluck(boardState.ingredients, 'name'))
-				.then(function(data){
-					boardState.recipes = data;
-				});
+			$state.go('search', null, {reload: true});
 		};
 	});
