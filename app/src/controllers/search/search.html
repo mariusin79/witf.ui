@@ -1,10 +1,14 @@
-<div class="row recipeWrapper">
+<div class="row">
 	<ul>
-		<li ng-repeat="recipe in recipes" class="thumbnail recipe col-xs-6">
-			<!--<img ng-src="{{recipe.imageUrl}}"/>-->
-			<div class="caption">
-				<p>{{recipe.recipeName}}</p>
-				<p><a href="{{recipe.urlToRecipeAtSource}}" target="_blank" class="btn btn-block btn-primary" role="button">Vis</a></p>
+		<li ng-repeat="recipe in recipes" class="recipe col-xs-6">
+			<div class="thumbnail">
+				<!--<img ng-src="{{recipe.imageUrl}}"/>-->
+				<div class="caption">
+					<p>{{recipe.recipeName}}</p>
+
+					<p><a href="{{recipe.urlToRecipeAtSource}}" target="_blank" class="btn btn-block btn-primary"
+						  role="button">Vis</a></p>
+				</div>
 			</div>
 		</li>
 	</ul>
