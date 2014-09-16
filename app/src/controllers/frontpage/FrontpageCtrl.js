@@ -1,5 +1,5 @@
 angular.module('pingPongApp')
-	.controller('MainCtrl', function ($scope) {
+	.controller('FrontpageCtrl', function ($scope) {
 		var adjs = [
 				"autumn", "hidden", "bitter", "misty", "silent", "empty", "dry", "dark",
 				"summer", "icy", "delicate", "quiet", "white", "cool", "spring", "winter",

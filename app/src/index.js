@@ -8,8 +8,8 @@ angular.module('pingPongApp', ['ui.router'])
 		$stateProvider
 			.state('main', {
 				url: '/',
-				templateUrl: 'partials/main.html',
-				controller: 'MainCtrl'
+				templateUrl: 'src/controllers/frontpage/frontpage.html',
+				controller: 'FrontpageCtrl'
 			})
 			.state('board', {
 				abstract: true,
@@ -19,16 +19,16 @@ angular.module('pingPongApp', ['ui.router'])
 				url: '/board/:boardid',
 				resolve: {
 					boardState: function () {
-						return {ingredients: [], recipes: []};
+						return {ingredients: [{name: 'ost'}], recipes: []};
 					}
 				},
 				views: {
 					detail: {
-						templateUrl: 'partials/board.detail.html',
-						controller: 'BoardCtrl'
+						templateUrl: 'src/controllers/ingredients/ingredients.html',
+						controller: 'IngredientCtrl'
 					},
 					search: {
-						templateUrl: 'partials/board.search.html',
+						templateUrl: 'src/controllers/search/search.html',
 						controller: 'SearchCtrl'
 					}
 				}
