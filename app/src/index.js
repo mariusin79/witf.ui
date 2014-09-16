@@ -1,4 +1,4 @@
-angular.module('pingPongApp', ['ui.router'])
+angular.module('pingPongApp', ['ui.router', 'ngResource'])
 	.constant('apiUrl', 'http://api.m0f0.net/api')
 	.config(function ($stateProvider, $urlRouterProvider) {
 		// For any unmatched url, redirect to /state1
