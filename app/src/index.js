@@ -15,11 +15,13 @@ angular.module('pingPongApp', ['ui.router'])
 				abstract: true,
 				templateUrl: 'partials/board.html'
 			})
-			.state('board.detail', {
+			.state('board.ingredients', {
 				url: '/board/:boardid',
 				resolve: {
 					boardState: function () {
-						return {ingredients: [{name: 'ost'}], recipes: []};
+						return {ingredients: [
+							{name: 'ost'}
+						], recipes: []};
 					}
 				},
 				views: {
