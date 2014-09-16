@@ -28,13 +28,12 @@ angular.module('pingPongApp', ['ui.router'])
 			.state('board', {
 				abstract: true,
 				templateUrl: 'partials/board.html',
-
 			})
 			.state('ingredients', {
 				parent: 'board',
 				url: '/:boardid',
 				views: {
-					'ingredients': {
+					'ingredients@board': {
 						templateUrl: 'src/controllers/ingredients/ingredients.html',
 						controller: 'IngredientCtrl'
 					}
@@ -46,6 +45,15 @@ angular.module('pingPongApp', ['ui.router'])
 					'search@board': {
 						templateUrl: 'src/controllers/search/search.html',
 						controller: 'SearchCtrl'
+					}
+				}
+			})
+			.state('suggest', {
+				parent: 'search',
+				views: {
+					'suggest@board': {
+						templateUrl: 'src/controllers/suggest/suggest.html',
+						controller: 'SuggestCtrl'
 					}
 				}
 			})
