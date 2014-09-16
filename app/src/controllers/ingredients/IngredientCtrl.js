@@ -1,6 +1,5 @@
 angular.module('pingPongApp')
-	.controller('IngredientCtrl', function ($scope, $stateParams, boardState, Api, FoodConversation) {
-	.controller('IngredientCtrl', function ($scope, $state, boardState, Api) {
+	.controller('IngredientCtrl', function ($scope, $state, $stateParams, boardState, Api, FoodConversation) {
 		$scope.boardState = boardState;
 
 		$scope.addIngredient = function (ingredient) {
@@ -22,9 +21,7 @@ angular.module('pingPongApp')
 				if (error.status == 404)
 				{
 					$scope.foodConversation = new FoodConversation();
-					$scope.foodConversation.$update({id: $stateParams.boardid}).then(null, function(error) {
-				
-					});
+					$scope.foodConversation.$update({id: $stateParams.boardid});
 				}
 			});
 	});
