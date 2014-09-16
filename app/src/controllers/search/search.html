@@ -1,14 +1,28 @@
-<div class="row recipeWrapper">
+<div class="row">
 	<ul>
-		<li ng-repeat="recipe in recipes" class="thumbnail recipe col-xs-6">
-			<!--<img ng-src="{{recipe.imageUrl}}"/>-->
-			<div class="caption">
-				<p>{{recipe.recipeName}}</p>
-				<p><a href="{{recipe.urlToRecipeAtSource}}" target="_blank" class="btn btn-block btn-primary" role="button">Vis</a></p>
+		<li ng-if="boardState.recipes === null">
+			<div>
+				loading recipes
+			</div>
+		</li>
+		<li ng-repeat="recipe in boardState.recipes" class="recipe col-xs-6">
+			<div class="thumbnail">
+				<!--<img ng-src="{{recipe.imageUrl}}"/>-->
+				<div class="caption">
+					<p>{{recipe.recipeName}}</p>
+
+					<p><a href="{{recipe.urlToRecipeAtSource}}" target="_blank" class="btn btn-block btn-primary"
+						  role="button">Vis</a></p>
+					<label>
+						<input type="checkbox" ng-model="recipe.selected"> Velg oppskrift
+					</label>
+				</div>
 			</div>
 		</li>
 	</ul>
 </div>
 <div class="row">
-	<a class="btn btn-primary btn-lg btn-block" ng-click="expand()">Tilbake</a>
+	<!--<a class="btn btn-default btn-block" ng-disabled="!boardState.getSelectedRecipes().length">Foreslå oppskrifter</a>-->
+	<a class="btn btn-default btn-block" ng-click="suggest()">Foreslå oppskrifter</a>
+	<a class="btn btn-primary btn-lg btn-block" ui-sref="ingredients">Tilbake</a>
 </div>

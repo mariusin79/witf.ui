@@ -1,5 +1,5 @@
 angular.module('pingPongApp')
-	.controller('SearchCtrl', function ($scope, $state, boardState, Api) {
+	.controller('SuggestCtrl', function ($scope, boardState, Api) {
 		$scope.boardState = boardState;
 
 		boardState.recipes = null;
@@ -7,8 +7,4 @@ angular.module('pingPongApp')
 			.then(function(data){
 				boardState.recipes = data;
 			});
-
-		$scope.suggest = function (){
-			$state.go('suggest', null, {reload: true});
-		}
 	});
