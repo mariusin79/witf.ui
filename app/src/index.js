@@ -22,7 +22,7 @@ angular.module('pingPongApp', ['ui.router', 'ngResource'])
 		$stateProvider
 			.state('main', {
 				url: '/',
-				templateUrl: 'old/controllers/frontpage/frontpage.html',
+				templateUrl: 'src/controllers/frontpage/frontpage.html',
 				controller: 'FrontpageCtrl'
 			})
 			.state('board', {
@@ -34,7 +34,7 @@ angular.module('pingPongApp', ['ui.router', 'ngResource'])
 				url: '/:boardid',
 				views: {
 					'ingredients@board': {
-						templateUrl: 'old/controllers/ingredients/ingredients.html',
+						templateUrl: 'src/controllers/ingredients/ingredients.html',
 						controller: 'IngredientCtrl'
 					}
 				}
@@ -43,7 +43,7 @@ angular.module('pingPongApp', ['ui.router', 'ngResource'])
 				parent: 'ingredients',
 				views: {
 					'search@board': {
-						templateUrl: 'old/controllers/search/search.html',
+						templateUrl: 'src/controllers/search/search.html',
 						controller: 'SearchCtrl'
 					}
 				}
@@ -52,7 +52,7 @@ angular.module('pingPongApp', ['ui.router', 'ngResource'])
 				parent: 'search',
 				views: {
 					'suggest@board': {
-						templateUrl: 'old/controllers/suggest/suggest.html',
+						templateUrl: 'src/controllers/suggest/suggest.html',
 						controller: 'SuggestCtrl'
 					}
 				}
