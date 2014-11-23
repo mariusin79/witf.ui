@@ -17,11 +17,18 @@
   },
   "homepage": "https://github.com/mariusin79/witf.ui",
   "devDependencies": {
-    "gulp": "~3.8.7",
-    "gulp-livereload": "~2.1.1",
-    "connect-livereload": "~0.4.0",
+    "browserify": "^6.3.2",
     "connect": "~2.25.7",
-    "gulp-util": "~3.0.0"
+    "connect-livereload": "~0.4.0",
+    "es6-promise": "^2.0.0",
+    "gulp": "^3.8.10",
+    "gulp-livereload": "~2.1.1",
+    "gulp-util": "~3.0.0",
+    "lodash": "^2.4.1",
+    "reactify": "^0.17.1",
+    "vinyl-source-stream": "^1.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react": "^0.12.1"
+  }
 }
